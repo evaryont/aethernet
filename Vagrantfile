@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: "base_install.sh", privileged: true
 
   @boxes.each do |box_name|
-    last_ip = 10+@boxes.index(box_name)
+    last_ip = 11+@boxes.index(box_name)
     config.vm.define box_name do |box|
       box.vm.hostname = "#{box_name}.dev.aether.nu"
       box.vm.network :private_network, ip: "10.20.30.#{last_ip}"
