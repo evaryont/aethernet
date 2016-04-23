@@ -20,10 +20,10 @@ enableService() {
 }
 
 echo "Performing system upgrade"
-pacman -Syu
+pacman -Syu --noconfirm
 
 echo "Installing salt on Arch"
-pacman -S salt-zmq
+pacman -S salt-zmq --noconfirm
 
 enableService salt-minion
 if hostnameMatches master; then
