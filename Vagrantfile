@@ -22,6 +22,12 @@ Vagrant.configure(2) do |config|
       box.vm.provider :virtualbox do |vb|
         vb.name = "#{box_name}.dev.aether.nu"
       end
+
+      box.vm.synced_folder ".", "/vagrant", disabled: true
+
+      if box_name == "master"
+        box.vm.synced_folder ".", "/srv"
+      end
     end
   end
 end
