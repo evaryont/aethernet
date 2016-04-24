@@ -12,6 +12,7 @@ base:
     - openssh.known_hosts
     - ntp.ng
     - imma_admin
+    - sudoers
 
   # Here begins the node-specific formulas:
   'master.*':

@@ -4,3 +4,4 @@ base:
     - openssh
     - ntp
     - administrivia
+    - sudo

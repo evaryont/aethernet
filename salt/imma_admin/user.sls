@@ -7,6 +7,15 @@
       - vagrant
     {% endif %}
 
+{{ pillar['administrivia']['sudo_group'] }}:
+  group.present:
+    - system: true
+    - addusers:
+      - {{ pillar['administrivia']['admin_name'] }}
+    {% if '.dev.' in grains['id'] %}
+      - vagrant
+    {% endif %}
+
 local admin group {{ pillar['administrivia']['admin_name'] }}:
   group.present:
     - name: {{ pillar['administrivia']['admin_name'] }}
