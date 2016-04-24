@@ -5,7 +5,7 @@ base:
     - basics.hostname
     - basics.locale
     - salt.minion
-    - basics.salt_sync
+    - basics.salt_tweaks
   'master':
     - salt.master
     - salt.formulas
