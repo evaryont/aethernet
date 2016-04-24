@@ -14,6 +14,12 @@ Vagrant.configure(2) do |config|
   # Every box will be updated & have salt installed
   config.vm.provision :shell, path: "base_install.sh", privileged: true
 
+  # Speed up some of the package downloads
+  if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.scope = :box
+    config.cache.enable :pacman
+  end
+
   @boxes.each do |box_name|
     last_ip = 11+@boxes.index(box_name)
     config.vm.define box_name do |box|
