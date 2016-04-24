@@ -1,3 +1,6 @@
 [submodule "formulas/salt-formula"]
 	path = formulas/salt-formula
 	url = https://github.com/saltstack-formulas/salt-formula
+[submodule "formulas/openssh-formula"]
+	path = formulas/openssh-formula
+	url = https://github.com/saltstack-formulas/openssh-formula
