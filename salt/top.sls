@@ -8,4 +8,3 @@ base:
     - basics.salt_tweaks
   'master.*':
     - salt.master
-    - salt.formulas
