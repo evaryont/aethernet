@@ -7,3 +7,6 @@
 [submodule "formulas/ntp-formula"]
 	path = formulas/ntp-formula
 	url = https://github.com/saltstack-formulas/ntp-formula
+[submodule "formulas/sudoers-formula"]
+	path = formulas/sudoers-formula
+	url = https://github.com/saltstack-formulas/sudoers-formula
