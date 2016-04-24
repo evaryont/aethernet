@@ -1,9 +1,6 @@
 salt:
   install_packages: True
   master:
-    #fileserver_backend:
-    #  - git
-    #  - roots
     file_roots:
       base:
         - /srv/salt
@@ -13,7 +10,6 @@ salt:
         - /srv/pillar
     auto_accept: True
     hash_type: sha256
-    state_aggregate: True
   minion:
     master: 10.20.30.11
     hash_type: "sha256"
@@ -21,6 +17,8 @@ salt:
     state_output: "changes"
     state_output_profile: True
     state_output_diff: False
+    state_aggregate: True
+    state_events: True
 
 salt_formulas:
   list:
