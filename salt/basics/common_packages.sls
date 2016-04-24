@@ -1,0 +1,12 @@
+Install common packages:
+  pkg.installed:
+    - pkgs:
+      - python2-dbus # So salt can interact with systemd DBUS APIs
+      - python2-pygit2 # Salt's gitfs support
+      - dmidecode # Generally useful utility
+      - htop # Generally useful utility
+      - zsh # Favorite shell
+      - vim # Best editor
+      - vim-runtime # supporting files for the best editor
+      - vim-spell-en # english spell check files
+      - ruby # a favorite language of mine
