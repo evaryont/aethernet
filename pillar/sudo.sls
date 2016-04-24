@@ -4,6 +4,9 @@ sudoers:
   users:
     {{ admin_vars.admin_name }}:
       - 'ALL=(ALL) ALL'
+  groups:
+    {{ admin_vars.sudo_group }}:
+      - 'ALL=(ALL) ALL'
   defaults:
     generic:
       - env_reset
