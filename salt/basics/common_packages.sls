@@ -12,3 +12,4 @@ Install common packages:
       - vim-runtime # supporting files for the best editor
       - vim-spell-en # english spell check files
       - ruby # a favorite language of mine
+      - git # Powerful VCS
