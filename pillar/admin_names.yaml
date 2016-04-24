@@ -1,0 +1,3 @@
+admin_name: 'colin'
+ssh_group: 'sshing'
+sudo_group: 'wheel'

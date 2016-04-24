@@ -11,6 +11,7 @@ base:
     - openssh.config
     - openssh.known_hosts
     - ntp.ng
+    - imma_admin
 
   # Here begins the node-specific formulas:
   'master.*':

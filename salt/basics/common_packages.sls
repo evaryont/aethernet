@@ -13,3 +13,4 @@ Install common packages:
       - vim-spell-en # english spell check files
       - ruby # a favorite language of mine
       - git # Powerful VCS
+      - wget # Useful CLI downloading tool

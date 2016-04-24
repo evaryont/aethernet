@@ -1,0 +1,6 @@
+[Unit]
+Description=Download authorized keys for {{ pillar['administrivia']['admin_name'] }}
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/wget https://github.com/evaryont.keys -O /home/{{ pillar['administrivia']['admin_name'] }}/.ssh/authorized_keys
