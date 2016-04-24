@@ -5,3 +5,4 @@ base:
     - ntp
     - administrivia
     - sudo
+    - firewalld

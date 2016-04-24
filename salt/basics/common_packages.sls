@@ -14,3 +14,5 @@ Install common packages:
       - ruby # a favorite language of mine
       - git # Powerful VCS
       - wget # Useful CLI downloading tool
+      - augeas # Smart file editing
+      - python2-augeas # Bindings for augeas

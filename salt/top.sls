@@ -13,6 +13,7 @@ base:
     - ntp.ng
     - imma_admin
     - sudoers
+    - firewalld
 
   # Here begins the node-specific formulas:
   'master.*':
