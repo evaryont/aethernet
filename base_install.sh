@@ -25,22 +25,26 @@ echo "Performing system upgrade"
 pacman -Syu --noconfirm
 
 echo "Installing salt on Arch"
-pacman -S salt-zmq --noconfirm
+pacman -S --noconfirm --needed salt-zmq 
 
 # Check if we're the salt master, and do some basic configuration
 if hostnameMatches master; then
   cat >/etc/salt/master <<EOF
-file_roots:
-  base:
-    - /srv/salt
-
 pillar_roots:
   base:
     - /srv/pillar
 
 auto_accept: True
 hash_type: sha256
+
+file_roots:
+  base:
+    - /srv/salt
 EOF
+
+  for formula_dir in /srv/formulas/*; do
+    echo "    - ${formula_dir}" >> /etc/salt/master
+  done
 
   enableService salt-master
 fi
@@ -53,3 +57,6 @@ hash_type: sha256
 EOF
 
 enableService salt-minion
+
+sleep 2
+salt-call state.highstate

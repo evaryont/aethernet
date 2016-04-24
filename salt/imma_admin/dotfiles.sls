@@ -15,8 +15,7 @@
     - template: jinja
 
 auth_keys_dl.timer:
-  service.running:
-    - enable: True
+  service.enabled
 
 admin dotfiles:
   git.latest:

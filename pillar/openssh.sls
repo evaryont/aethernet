@@ -12,12 +12,10 @@ sshd_config:
   PrintMotd: 'no'
   X11Forwarding: 'no'
   ChallengeResponseAuthentication: 'no'
-  {% if not '.dev.' in pillar['fqdn'] %}
   PasswordAuthentication: 'no'
-  {% endif %}
   PubkeyAuthentication: 'yes'
   PermitRootLogin: 'no'
-  AllowUsers: {{ admin_vars.admin_name }}
+  AllowUsers: {{ admin_vars.admin_name }} {{ "vagrant" if '.dev.' in grains['id'] }}
   AllowGroups: {{ admin_vars.ssh_group }}
   Ciphers: chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
   KexAlgorithms: curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256

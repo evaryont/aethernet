@@ -2,6 +2,10 @@
   group.present:
     - gid: 3001
     - system: true
+    {% if '.dev.' in grains['id'] %}
+    - addusers:
+      - vagrant
+    {% endif %}
 
 local admin group {{ pillar['administrivia']['admin_name'] }}:
   group.present:
