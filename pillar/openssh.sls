@@ -12,7 +12,9 @@ sshd_config:
   PrintMotd: 'no'
   X11Forwarding: 'no'
   ChallengeResponseAuthentication: 'no'
+  {% if not '.dev.' in pillar['fqdn'] %}
   PasswordAuthentication: 'no'
+  {% endif %}
   PubkeyAuthentication: 'yes'
   PermitRootLogin: 'no'
   AllowUsers: {{ admin_vars.admin_name }}
