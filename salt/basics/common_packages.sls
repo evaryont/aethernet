@@ -3,6 +3,8 @@ Install common packages:
     - pkgs:
       - python2-dbus # So salt can interact with systemd DBUS APIs
       - python2-pygit2 # Salt's gitfs support
+      - python2-ndg-httpsclient # Support HTTPS requests
+      - python2-pyopenssl # More modern openssl wrapper
       - dmidecode # Generally useful utility
       - htop # Generally useful utility
       - zsh # Favorite shell
