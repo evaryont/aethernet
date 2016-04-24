@@ -1,4 +1,3 @@
 base:
   '*':
-    - timezone
-    - salt_sync
+    - basics
