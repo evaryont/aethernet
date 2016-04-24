@@ -4,6 +4,9 @@ salt:
     file_roots:
       base:
         - /srv/salt
+        - /srv/formulas/salt-formula
+        - /srv/formulas/openssh-formula
+        - /srv/formulas/ntp-formula
     pillar_roots:
       base:
         - /srv/pillar
@@ -18,9 +21,3 @@ salt:
     state_output_diff: False
     state_aggregate: True
     state_events: True
-
-salt_formulas:
-  list:
-    base:
-      - salt-formula
-      - openssh-formula

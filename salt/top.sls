@@ -10,6 +10,7 @@ base:
     - openssh.client
     - openssh.config
     - openssh.known_hosts
+    - ntp.ng
 
   # Here begins the node-specific formulas:
   'master.*':

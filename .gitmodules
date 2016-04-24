@@ -4,3 +4,6 @@
 [submodule "formulas/openssh-formula"]
 	path = formulas/openssh-formula
 	url = https://github.com/saltstack-formulas/openssh-formula
+[submodule "formulas/ntp-formula"]
+	path = formulas/ntp-formula
+	url = https://github.com/saltstack-formulas/ntp-formula
