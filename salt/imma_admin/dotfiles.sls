@@ -17,6 +17,10 @@
 auth_keys_dl.timer:
   service.enabled
 
+github.com:
+  ssh_known_hosts.present:
+    - user: {{ pillar['administrivia']['admin_name'] }}
+
 admin dotfiles:
   git.latest:
     - name: https://github.com/evaryont/dotfiles.git
@@ -29,7 +33,11 @@ admin dotfiles:
     - force_reset: True
     - depth: 1
 
-github.com:
-  ssh_known_hosts:
-    - present
+rake dotfiles:
+  cmd.wait:
+    - name: /usr/bin/rake
+    - cwd: /home/{{ pillar['administrivia']['admin_name'] }}/dotfiles
     - user: {{ pillar['administrivia']['admin_name'] }}
+    - group: {{ pillar['administrivia']['admin_name'] }}
+    - watch:
+      - git: admin dotfiles
