@@ -16,3 +16,4 @@ Install common packages:
       - wget # Useful CLI downloading tool
       - augeas # Smart file editing
       - python2-augeas # Bindings for augeas
+      - bind-tools # Useful DNS related CLI tools
