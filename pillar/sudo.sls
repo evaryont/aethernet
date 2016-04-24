@@ -4,6 +4,10 @@ sudoers:
   users:
     {{ admin_vars.admin_name }}:
       - 'ALL=(ALL) ALL'
+    {% if '.dev.' in grains['id'] %}
+    vagrant:
+      - 'ALL=(NOPASSWD) ALL'
+    {% endif %}
   groups:
     {{ admin_vars.sudo_group }}:
       - 'ALL=(ALL) ALL'
