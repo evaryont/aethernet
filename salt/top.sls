@@ -6,6 +6,6 @@ base:
     - basics.locale
     - salt.minion
     - basics.salt_tweaks
-  'master':
+  'master.*':
     - salt.master
     - salt.formulas
