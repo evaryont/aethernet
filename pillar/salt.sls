@@ -7,7 +7,7 @@ salt:
         - /srv/formulas/salt-formula
         - /srv/formulas/openssh-formula
         - /srv/formulas/ntp-formula
-        - /srv/formulas/sudo-formula
+        - /srv/formulas/sudoers-formula
     pillar_roots:
       base:
         - /srv/pillar
