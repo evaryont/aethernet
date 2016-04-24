@@ -4,7 +4,6 @@ salt:
     file_roots:
       base:
         - /srv/salt
-        - /srv/salt/formulas/salt-formula
     pillar_roots:
       base:
         - /srv/pillar
