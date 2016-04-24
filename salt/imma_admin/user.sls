@@ -15,6 +15,8 @@
     {% if '.dev.' in grains['id'] %}
       - vagrant
     {% endif %}
+    - require:
+      - group: local admin group {{ pillar['administrivia']['admin_name'] }}
 
 local admin group {{ pillar['administrivia']['admin_name'] }}:
   group.present:
