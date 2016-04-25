@@ -32,6 +32,8 @@ admin dotfiles:
     - force_fetch: True
     - force_reset: True
     - depth: 1
+    - require:
+      - user: {{ pillar['administrivia']['admin_name'] }}
 
 rake dotfiles:
   cmd.wait:
@@ -41,3 +43,5 @@ rake dotfiles:
     - group: {{ pillar['administrivia']['admin_name'] }}
     - watch:
       - git: admin dotfiles
+    - require:
+      - user: {{ pillar['administrivia']['admin_name'] }}
