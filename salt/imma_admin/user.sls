@@ -10,13 +10,10 @@
 {{ pillar['administrivia']['sudo_group'] }}:
   group.present:
     - system: true
-    - addusers:
-      - {{ pillar['administrivia']['admin_name'] }}
     {% if '.dev.' in grains['id'] %}
+    - addusers:
       - vagrant
     {% endif %}
-    - require:
-      - group: local admin group {{ pillar['administrivia']['admin_name'] }}
 
 local admin group {{ pillar['administrivia']['admin_name'] }}:
   group.present:
@@ -34,3 +31,7 @@ local admin user {{ pillar['administrivia']['admin_name'] }}:
     - groups:
       - {{ pillar['administrivia']['ssh_group'] }}
       - {{ pillar['administrivia']['sudo_group'] }}
+    - require:
+      - group: local admin group {{ pillar['administrivia']['admin_name'] }}
+      - group: {{ pillar['administrivia']['ssh_group'] }}
+      - group: {{ pillar['administrivia']['sudo_group'] }}
