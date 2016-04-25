@@ -13,6 +13,3 @@
 [submodule "formulas/firewalld-formula"]
 	path = formulas/firewalld-formula
 	url = https://github.com/saltstack-formulas/firewalld-formula
-[submodule "formulas/owncloud-formula"]
-	path = formulas/owncloud-formula
-	url = https://github.com/saltstack-formulas/owncloud-formula
