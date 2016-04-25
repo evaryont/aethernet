@@ -15,6 +15,12 @@ salt:
         - /srv/pillar
     auto_accept: True
     hash_type: sha256
+    state_verbose: False
+    state_output: "changes"
+    state_output_profile: True
+    state_output_diff: False
+    state_aggregate: True
+    state_events: True
   minion:
     master: 10.20.30.11
     hash_type: "sha256"
