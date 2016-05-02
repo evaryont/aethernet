@@ -1,5 +1,5 @@
 Install common packages:
-  pkg.installed:
+  pkg.latest:
     - pkgs:
       - python2-dbus # So salt can interact with systemd DBUS APIs
       - python2-pygit2 # Salt's gitfs support
