@@ -10,3 +10,6 @@
 [submodule "formulas/firewalld-formula"]
 	path = formulas/firewalld-formula
 	url = https://github.com/saltstack-formulas/firewalld-formula
+[submodule "formulas/openssh-formula"]
+	path = formulas/openssh-formula
+	url = https://github.com/evaryont/openssh-formula
