@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ -f /etc/arch-release ]; then
+  OS='arch'
+elif [ -f /etc/centos-release ]; then
+  OS='centos'
+fi
+
 # simple check if the machine's hostname matches the first argument
 hostnameMatches() {
   hostname | grep $1 > /dev/null
@@ -21,11 +27,25 @@ enableService() {
   fi
 }
 
-echo "Performing system upgrade"
-pacman -Syu --noconfirm
+update_and_install() {
+  if [ "$OS" == 'arch' ]; then
+    echo "Performing system upgrade"
+    pacman -Syu --quiet --noconfirm
 
-echo "Installing salt on Arch"
-pacman -S --noconfirm --needed salt-zmq 
+    echo "Installing salt on Arch"
+    pacman -S --quiet --noconfirm --needed salt-zmq 
+  elif [ "$OS" == 'centos' ]; then
+    echo "Updating system"
+    yum install --assumeyes --quiet epel-release
+    yum update --assumeyes --quiet
+    echo "Installing salt on CentOS"
+    yum install --assumeyes --quiet https://repo.saltstack.com/yum/redhat/latest/x86_64/salt-repo-2015.8-2.el7.noarch.rpm
+    yum install --assumeyes --quiet salt-minion
+  fi
+}
+
+# Make sure the system is up-to-date and install salt on top of that
+update_and_install
 
 # Check if we're the salt master, and do some basic configuration
 if hostnameMatches master; then

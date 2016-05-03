@@ -1,5 +1,6 @@
 base:
   '*':
+    - basics
     - salt
     - openssh
     - ntp
