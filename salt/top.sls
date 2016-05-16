@@ -18,3 +18,6 @@ base:
   # Here begins the node-specific formulas:
   'master.*':
     - salt.master
+
+  'evaryont.me':
+    - salt.master
