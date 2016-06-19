@@ -38,4 +38,5 @@ common_packages:
   sys_utils:
       - dmidecode # Generally useful utility
       - wget # Useful CLI downloading tool
+      - curl # Useful CLI downloading tool, part 2
       - augeas # Smart file editing
