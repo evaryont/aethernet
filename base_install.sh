@@ -19,12 +19,7 @@ enableService() {
   echo -n "Enabling ${shortName}... "
   systemctl enable $1
 
-  echo -n "Reloading ${shortName}... "
-  if [ "$2" == "block" ]; then
-    systemctl reload-or-restart ${shortName}
-  else
-    systemctl --no-block reload-or-restart ${shortName}
-  fi
+  systemctl reload-or-restart ${shortName}
 }
 
 update_and_install() {
@@ -36,6 +31,7 @@ update_and_install() {
     pacman -S --quiet --noconfirm --needed salt-zmq 
   elif [ "$OS" == 'centos' ]; then
     echo "Updating system"
+    yum makecache fast --assumeyes --quiet
     yum install --assumeyes --quiet epel-release
     yum update --assumeyes --quiet
     echo "Installing salt on CentOS"
