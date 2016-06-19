@@ -3,6 +3,7 @@
   ['master', 'arch'],
   ['owncloud', 'arch'],
   ['ipa', 'centos'],
+  ['gitlab', 'centos'],
 ]
 
 @box_settings = {
@@ -31,6 +32,10 @@ Vagrant.configure(2) do |config|
     config.cache.scope = :box
     config.cache.enable :pacman
     config.cache.enable :yum
+  end
+
+  config.vm.provider "virtualbox" do |v|
+      v.memory = 1024
   end
 
   @boxes.each_with_index do |box, box_number|
