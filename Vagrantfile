@@ -8,7 +8,7 @@
 
 @box_settings = {
   'arch' => {
-    'box' => 'ogarcia/archlinux-x64', 
+    'box' => 'ogarcia/arch-net-x64',
     'cache' => :pacman
   },
   'centos' => {
@@ -30,6 +30,7 @@ Vagrant.configure(2) do |config|
   # Speed up some of the package downloads
   if Vagrant.has_plugin?('vagrant-cachier')
     config.cache.scope = :box
+    config.cache.synced_folder_opts = {type: :nfs, mount_options: ['nolock', 'vers=4', 'tcp']}
     config.cache.enable :pacman
     config.cache.enable :yum
   end
