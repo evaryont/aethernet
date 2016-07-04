@@ -21,3 +21,9 @@ base:
 
   'evaryont.me':
     - salt.master
+
+  'gitlab.dev.*':
+    - gitlab-ce
+
+  'library.evaryont.me':
+    - gitlab-ce
