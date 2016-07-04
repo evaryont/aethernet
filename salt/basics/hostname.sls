@@ -3,4 +3,4 @@
     - user: root
     - group: root
     - mode: 644
-    - content_grains: id
+    - contents_grains: id
