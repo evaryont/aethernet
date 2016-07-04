@@ -14,3 +14,7 @@ common_packages:
     - python-ndg_httpsclient
     - pyOpenSSL
     - python-augeas
+
+  sys_utils:
+    - pygpgme
+    - yum-utils
