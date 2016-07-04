@@ -52,6 +52,7 @@ pillar_roots:
 
 auto_accept: True
 hash_type: sha256
+pillar_merge_lists: True
 
 file_roots:
   base:
