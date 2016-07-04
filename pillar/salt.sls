@@ -33,3 +33,12 @@ salt:
     state_aggregate: True
     state_events: True
     pillar_merge_lists: True
+
+# Required for openssh.known_hosts
+mine_functions:
+  public_ssh_host_keys:
+    mine_function: cmd.run
+    cmd: cat /etc/ssh/ssh_host_*_key.pub
+  public_ssh_hostname:
+    mine_function: grains.get
+    key: id
