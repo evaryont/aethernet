@@ -21,6 +21,7 @@ salt:
     state_output_diff: False
     state_aggregate: True
     state_events: True
+    pillar_merge_lists: True
   minion:
     master: 10.20.30.11
     hash_type: "sha256"
@@ -30,3 +31,4 @@ salt:
     state_output_diff: False
     state_aggregate: True
     state_events: True
+    pillar_merge_lists: True
