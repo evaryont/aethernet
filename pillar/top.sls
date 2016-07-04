@@ -9,3 +9,7 @@ base:
     - sudo
     - firewalld
     - imma_admin
+
+  'evaryont.me or master.dev.*':
+    - match: compound
+    - websites
