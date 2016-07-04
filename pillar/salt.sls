@@ -9,7 +9,7 @@ salt:
         - /srv/formulas/ntp-formula
         - /srv/formulas/sudoers-formula
         - /srv/formulas/firewalld-formula
-        - /srv/formulas/owncloud-formula
+        - /srv/formulas/nginx-formula
     pillar_roots:
       base:
         - /srv/pillar
