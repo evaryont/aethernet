@@ -18,9 +18,3 @@ link to help me find the site:
   file.symlink:
     - name: /home/{{ pillar['administrivia']['admin_name'] }}/blog
     - target: {{ pillar['personal_website_dir'] }}
-
-#website nginx config:
-#  file.managed:
-#    - name: /etc/nginx/sites-enabled/personal_website.conf
-#    - contents: salt://personal_site/nginx_conf.j2
-#    - template: jinja
