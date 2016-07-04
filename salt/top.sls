@@ -21,6 +21,7 @@ base:
 
   'evaryont.me':
     - salt.master
+    - personal_website
 
   'gitlab.dev.*':
     - gitlab-ce
