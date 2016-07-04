@@ -1,0 +1,19 @@
+## This file is managed by Salt via {{ source }}
+## Do not edit! Any changes will be overridden.
+
+## URLs on which GitLab, Mattermost, and Pages will be reachable.
+## For more details on configuring external_url see:
+## http://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
+external_url '{{ salt['pillar.get']('gitlab:external_url') }}'
+mattermost_external_url '{{ salt['pillar.get']('gitlab:mattermost_external_url') }}'
+pages_external_url '{{ salt['pillar.get']('gitlab:pages_external_url') }}'
+
+{% for section, properties in salt['pillar.get']('gitlab:config').iteritems() -%}
+
+##
+## {{ section }} configuration
+##
+{% for property, value in properties.iteritems() %}
+{{ section }}['{{ property }}'] = {{ value }}
+{% endfor %}
+{% endfor %}
