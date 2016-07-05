@@ -55,7 +55,7 @@ Vagrant.configure(2) do |config|
       box.vm.synced_folder '.', '/vagrant', disabled: true
 
       if box_name == 'master'
-        box.vm.synced_folder '.', '/srv'
+        box.vm.synced_folder '.', '/srv/aethernet'
       end
     end
   end

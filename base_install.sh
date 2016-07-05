@@ -48,7 +48,7 @@ if hostnameMatches master; then
   cat >/etc/salt/master <<EOF
 pillar_roots:
   base:
-    - /srv/pillar
+    - /srv/aethernet/pillar
 
 auto_accept: True
 hash_type: sha256
@@ -56,10 +56,10 @@ pillar_merge_lists: True
 
 file_roots:
   base:
-    - /srv/salt
+    - /srv/aethernet/salt
 EOF
 
-  for formula_dir in /srv/formulas/*; do
+  for formula_dir in /srv/aethernet/formulas/*; do
     echo "    - ${formula_dir}" >> /etc/salt/master
   done
 

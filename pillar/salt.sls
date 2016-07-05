@@ -3,16 +3,16 @@ salt:
   master:
     file_roots:
       base:
-        - /srv/salt
-        - /srv/formulas/salt-formula
-        - /srv/formulas/openssh-formula
-        - /srv/formulas/ntp-formula
-        - /srv/formulas/sudoers-formula
-        - /srv/formulas/firewalld-formula
-        - /srv/formulas/nginx-formula
+        - /srv/aethernet/salt
+        - /srv/aethernet/formulas/salt-formula
+        - /srv/aethernet/formulas/openssh-formula
+        - /srv/aethernet/formulas/ntp-formula
+        - /srv/aethernet/formulas/sudoers-formula
+        - /srv/aethernet/formulas/firewalld-formula
+        - /srv/aethernet/formulas/nginx-formula
     pillar_roots:
       base:
-        - /srv/pillar
+        - /srv/aethernet/pillar
     auto_accept: True
     hash_type: sha256
     state_verbose: False
