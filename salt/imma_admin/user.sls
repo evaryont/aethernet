@@ -35,3 +35,10 @@ local admin user {{ pillar['administrivia']['admin_name'] }}:
       - group: local admin group {{ pillar['administrivia']['admin_name'] }}
       - group: {{ pillar['administrivia']['ssh_group'] }}
       - group: {{ pillar['administrivia']['sudo_group'] }}
+
+local admin ssh key gazelle:
+  ssh_auth.present:
+    - user: {{ pillar['administrivia']['admin_name'] }}
+    - name: AAAAC3NzaC1lZDI1NTE5AAAAII5+emKQ34nJzrwc3u3gCk8A7rJBHHKAj46GGPvhzuI8
+    - enc: ssh-ed25519
+    - comment: Gazelle access to Aether
