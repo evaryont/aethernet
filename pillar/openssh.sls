@@ -15,7 +15,7 @@ sshd_config:
   PasswordAuthentication: 'no'
   PubkeyAuthentication: 'yes'
   PermitRootLogin: 'no'
-  AllowUsers: {{ admin_vars.admin_name }} {{ "vagrant" if '.dev.' in grains['id'] }}
+  AllowUsers: {{ admin_vars.admin_name }} {{ "vagrant" if '.dev.' in grains['id'] else "" }}
   AllowGroups: {{ admin_vars.ssh_group }}
   Ciphers: chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
   KexAlgorithms: curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
