@@ -1,18 +1,21 @@
+{% set basedir = '/srv/aethernet' %}
+
 salt:
   install_packages: True
   master:
+    basedir: {{ basedir }}
     file_roots:
       base:
-        - /srv/aethernet/salt
-        - /srv/aethernet/formulas/salt-formula
-        - /srv/aethernet/formulas/openssh-formula
-        - /srv/aethernet/formulas/ntp-formula
-        - /srv/aethernet/formulas/sudoers-formula
-        - /srv/aethernet/formulas/firewalld-formula
-        - /srv/aethernet/formulas/nginx-formula
+        - {{ basedir }}/salt
+        - {{ basedir }}/formulas/salt-formula
+        - {{ basedir }}/formulas/openssh-formula
+        - {{ basedir }}/formulas/ntp-formula
+        - {{ basedir }}/formulas/sudoers-formula
+        - {{ basedir }}/formulas/firewalld-formula
+        - {{ basedir }}/formulas/nginx-formula
     pillar_roots:
       base:
-        - /srv/aethernet/pillar
+        - {{ basedir }}/pillar
     auto_accept: True
     hash_type: sha256
     state_verbose: False
