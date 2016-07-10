@@ -8,3 +8,6 @@ administrivia:
 {% for var in admin_vars %}
   {{ var }}: {{ admin_vars[var] }}
 {% endfor %}
+  extra_users:
+    sudo: []
+    ssh: []

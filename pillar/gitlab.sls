@@ -1,7 +1,7 @@
 gitlab:
-  external_url: 'http://gitlab.dev.aether.nu'
-  mattermost_external_url: 'http://chat.gitlab.dev.aether.nu'
-  pages_external_url: 'http://pages.gitlab.dev.aether.nu'
+  external_url: 'http://library.evaryont.me'
+  mattermost_external_url: 'http://corvus.pub'
+  pages_external_url: 'http://pages.corvus.club'
 
   config:
     gitlab_rails:

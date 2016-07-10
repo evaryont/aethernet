@@ -2,18 +2,14 @@
   group.present:
     - gid: 3001
     - system: true
-    {% if '.dev.' in grains['id'] %}
     - addusers:
-      - vagrant
-    {% endif %}
+      {{ pillar['administrivia']['extra_users']['ssh'] }}
 
 {{ pillar['administrivia']['sudo_group'] }}:
   group.present:
     - system: true
-    {% if '.dev.' in grains['id'] %}
     - addusers:
-      - vagrant
-    {% endif %}
+      {{ pillar['administrivia']['extra_users']['sudo'] }}
 
 local admin group {{ pillar['administrivia']['admin_name'] }}:
   group.present:

@@ -10,6 +10,9 @@ base:
     - firewalld
     - imma_admin
 
+  '*.dev.*':
+    - overrides.vagrant
+
   'evaryont.me or master.dev.*':
     - match: compound
     - websites
