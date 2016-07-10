@@ -2,14 +2,12 @@
   group.present:
     - gid: 3001
     - system: true
-    - addusers:
-      {{ pillar['administrivia']['extra_users']['ssh'] }}
+    - addusers: {{ pillar['administrivia']['extra_users']['ssh'] }}
 
 {{ pillar['administrivia']['sudo_group'] }}:
   group.present:
     - system: true
-    - addusers:
-      {{ pillar['administrivia']['extra_users']['sudo'] }}
+    - addusers: {{ pillar['administrivia']['extra_users']['sudo'] }}
 
 local admin group {{ pillar['administrivia']['admin_name'] }}:
   group.present:
