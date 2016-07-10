@@ -1,4 +1,4 @@
-{% import_yaml "firewall/" + grains['id'] + ".yml" as minion_firewall %}
+{% import_yaml "firewall_services.yaml" as firewall_services %}
 
 firewalld:
   enabled: True
@@ -11,6 +11,13 @@ firewalld:
         tcp:
           - 4505
           - 4506
+    kodi:
+      short: kodi
+      description: Kodi is an award winning software media center for playing videos, music, pictures, games and more.
+      ports:
+        tcp:
+          - 8080 # Kodi's HTTP web remote, websockets, and JSON-RPC
+          - 1135 # UPnP
   zones:
     public:
       short: Public
@@ -18,4 +25,4 @@ firewalld:
       services:
         - ssh
         - dhcpv6-client
-        {{ minion_firewall.services }}
+        {{ firewall_services[grains['id']] | default('') }}

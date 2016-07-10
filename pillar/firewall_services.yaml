@@ -1,0 +1,7 @@
+services:
+  evaryont.me:
+    - http
+    - https
+    - salt-master
+  frog.aether.me:
+    - kodi
