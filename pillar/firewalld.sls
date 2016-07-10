@@ -1,3 +1,5 @@
+{% import_yaml "firewall/" + grains['id'] + ".yml" as minion_firewall %}
+
 firewalld:
   enabled: True
   default_zone: public
@@ -16,6 +18,4 @@ firewalld:
       services:
         - ssh
         - dhcpv6-client
-
-include:
-  - firewall.{{ grains['id'] }}
+        {{ minion_firewall.services }}
