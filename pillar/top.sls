@@ -13,3 +13,6 @@ base:
   'evaryont.me or master.dev.*':
     - match: compound
     - websites
+
+  'frog.aether.nu':
+    - overrides.frog
