@@ -3,6 +3,7 @@ common_packages:
     - vim # Best editor
     - vim-runtime # supporting files for the best editor
     - vim-spell-en # english spell check files
+    - net-tools # netstat and other old school tools
 
   salt_dependencies:
     - python2-dbus # So salt can interact with systemd DBUS APIs
