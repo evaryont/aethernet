@@ -5,7 +5,7 @@ saltmaster sync files:
     - name: https://github.com/evaryont/aethernet.git
     - rev: base
     - target: {{ pillar['salt']['master']['basedir'] }}
-    - user: {{ pillar['administrivia']['admin_name'] }}
+    - user: root
     - submodules: True
     - force_clone: True
     - force_checkout: True
