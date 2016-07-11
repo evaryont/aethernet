@@ -25,6 +25,9 @@ firewalld:
       services:
         - ssh
         - dhcpv6-client
-        {%- for service in firewall_services[grains['id']]|default('') -%}
-        - {{ service }}
-        {%- endfor %}
+
+# And thanks to pillar_merge_lists, we can easily layer the list of services
+firewalld:
+  zones:
+    public:
+      services: {{ firewall_services[grains['id']] | default('') }}
