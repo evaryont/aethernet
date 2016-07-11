@@ -27,7 +27,7 @@ salt:
     pillar_merge_lists: True
     worker_threads: 3
   minion:
-    master: 10.20.30.11
+    master: evaryont.me
     hash_type: "sha256"
     state_verbose: False
     state_output: "changes"
