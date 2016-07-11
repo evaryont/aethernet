@@ -22,12 +22,4 @@ firewalld:
     public:
       short: Public
       description: "For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted."
-      services:
-        - ssh
-        - dhcpv6-client
-
-# And thanks to pillar_merge_lists, we can easily layer the list of services
-firewalld:
-  zones:
-    public:
-      services: {{ firewall_services[grains['id']] | default('') }}
+      services: {{ ['salt', 'dhcpv6-client'] + firewall_services[grains['id']]|default('') }}
