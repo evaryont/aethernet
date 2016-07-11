@@ -22,4 +22,9 @@ firewalld:
     public:
       short: Public
       description: "For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted."
-      services: {{ ['salt', 'dhcpv6-client'] + firewall_services[grains['id']]|default('') }}
+      services:
+        - salt
+        - dhcpv6-client
+        {% for fw_service in firewall_services.services[grains['id']]|default([]) %}
+        - {{ fw_service }}
+        {% endfor %}
