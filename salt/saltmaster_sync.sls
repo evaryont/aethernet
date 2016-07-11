@@ -1,5 +1,8 @@
 {% from "salt/map.jinja" import salt_settings with context %}
 
+include:
+  - salt.master
+
 saltmaster sync files:
   git.latest:
     - name: https://github.com/evaryont/aethernet.git
