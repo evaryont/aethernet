@@ -15,6 +15,9 @@ base:
     - sudoers
     - firewalld
 
+  'osfamily:RedHat'
+    - epel
+
   # Here begins the node-specific formulas:
   'master.*':
     - salt.master
