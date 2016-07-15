@@ -14,6 +14,6 @@ pages_external_url '{{ salt['pillar.get']('gitlab:pages_external_url') }}'
 ## {{ section }} configuration
 ##
 {% for property, value in properties.iteritems() %}
-{{ section }}['{{ property }}'] = {{ value }}
+{{ section }}['{{ property }}'] = {{ value | yaml_encode }}
 {% endfor %}
 {% endfor %}

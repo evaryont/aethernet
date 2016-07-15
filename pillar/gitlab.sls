@@ -23,7 +23,7 @@ gitlab:
       audit_usernames: true
     postgresql:
       enable: true
-      listen_address: null
+      listen_address: nil # disable postgresql listening on any network device
     redis:
       enable: true
     nginx:
