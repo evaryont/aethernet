@@ -35,7 +35,7 @@ update_and_install() {
     yum install --assumeyes --quiet epel-release
     yum update --assumeyes --quiet
     echo "Installing salt on CentOS"
-    yum install --assumeyes --quiet https://repo.saltstack.com/yum/redhat/latest/x86_64/salt-repo-2015.8-2.el7.noarch.rpm
+    yum install --assumeyes --quiet https://repo.saltstack.com/yum/redhat/salt-repo-latest-1.el7.noarch.rpm
     yum install --assumeyes --quiet salt-minion
   fi
 }
