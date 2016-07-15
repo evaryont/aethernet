@@ -35,4 +35,4 @@ gitlab:
     manage_storage_directories:
       enable: true
     mattermost:
-      enable: true
+      enable: false
