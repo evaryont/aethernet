@@ -3,6 +3,6 @@ services:
     - http
     - https
     - salt-master
-  frog.aether.me:
+  frog.aether.nu:
     - kodi
     - upnp
