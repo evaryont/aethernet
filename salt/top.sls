@@ -15,7 +15,7 @@ base:
     - sudoers
     - firewalld
 
-  'osfamily:RedHat'
+  'osfamily:RedHat':
     - epel
 
   # Here begins the node-specific formulas:
