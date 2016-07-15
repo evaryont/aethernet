@@ -20,6 +20,7 @@ base:
     - salt.master
 
   'evaryont.me':
+    - salt.master
     - saltmaster_sync
     - personal_site
 

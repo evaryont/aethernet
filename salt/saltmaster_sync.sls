@@ -1,8 +1,3 @@
-{% from "salt/map.jinja" import salt_settings with context %}
-
-include:
-  - salt.master
-
 saltmaster sync files:
   git.latest:
     - name: https://github.com/evaryont/aethernet.git
@@ -14,5 +9,3 @@ saltmaster sync files:
     - force_checkout: True
     - force_fetch: True
     - force_reset: True
-    - watch_in:
-      - service: {{ salt_settings.master_service }}
