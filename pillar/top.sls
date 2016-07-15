@@ -19,3 +19,6 @@ base:
 
   'frog.aether.nu':
     - overrides.frog
+
+  'library.evaryont.me or gitlab.dev.*':
+    - gitlab
