@@ -8,7 +8,6 @@ base:
     - administrivia
     - sudo
     - firewalld
-    - imma_admin
     - letsencrypt
 
   'evaryont.me or master.dev.*':
