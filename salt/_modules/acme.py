@@ -96,6 +96,7 @@ def cert(name,
          renew=None,
          keysize=None,
          server=None,
+         expand=True,
          owner='root',
          group='root'):
     '''
@@ -109,6 +110,7 @@ def cert(name,
     :param renew: True/'force' to force a renewal, or a window of renewal before expiry in days
     :param keysize: RSA key bits
     :param server: API endpoint to talk to
+    :param expand: Expand certificate names to include new names rather than overwriting
     :param owner: owner of private key
     :param group: group of private key
     :return: dict with 'result' True/False/None, 'comment' and certificate's expiry date ('not_after')
@@ -120,7 +122,7 @@ def cert(name,
         salt 'gitlab.example.com' acme.cert dev.example.com "[gitlab.example.com]" test_cert=True renew=14 webroot=/opt/gitlab/embedded/service/gitlab-rails/public
     '''
 
-    cmd = [LEA, 'certonly', '--agree-tos', '--expand']
+    cmd = [LEA, 'certonly', '--agree-tos']
 
     cert_file = _cert_file(name, 'cert')
     if not __salt__['file.file_exists'](cert_file):
@@ -155,6 +157,9 @@ def cert(name,
 
     if keysize:
         cmd.append('--rsa-key-size {0}'.format(keysize))
+
+    if expand:
+        cmd.append('--expand')
 
     cmd.append('--domains {0}'.format(name))
     if aliases is not None:

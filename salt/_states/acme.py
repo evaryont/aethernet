@@ -47,6 +47,7 @@ def cert(name,
          renew=None,
          keysize=None,
          server=None,
+         expand=True,
          owner='root',
          group='root'):
     '''
@@ -60,6 +61,7 @@ def cert(name,
     :param renew: True/'force' to force a renewal, or a window of renewal before expiry in days
     :param keysize: RSA key bits
     :param server: API endpoint to talk to
+    :param expand: Expand certificate names to include new names rather than overwriting
     :param owner: owner of private key
     :param group: group of private key
     '''
@@ -99,6 +101,7 @@ def cert(name,
         test_cert=test_cert,
         renew=renew,
         keysize=keysize,
+        expand=expand,
         server=server,
         owner=owner,
         group=group
