@@ -15,7 +15,7 @@ base:
     - sudoers
     - firewalld
 
-  'osfamily:RedHat':
+  'os_family:RedHat':
     - epel
 
   # Only select minions that actually have a LE domain set
