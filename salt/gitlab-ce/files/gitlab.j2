@@ -1,12 +1,19 @@
 ## This file is managed by Salt via {{ source }}
 ## Do not edit! Any changes will be overridden.
 
-## URLs on which GitLab, Mattermost, and Pages will be reachable.
+## URLs on which GitLab, Mattermost, Pages, and Registry will be reachable.
 ## For more details on configuring external_url see:
 ## http://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 external_url '{{ salt['pillar.get']('gitlab:external_url') }}'
 mattermost_external_url '{{ salt['pillar.get']('gitlab:mattermost_external_url') }}'
 pages_external_url '{{ salt['pillar.get']('gitlab:pages_external_url') }}'
+registry_external_url '{{ salt['pillar.get']('gitlab:registry_external_url') }}'
+
+## For setting up different data storing directory
+## see https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/README.md#storing-git-data-in-an-alternative-directory
+## If you want to use a single non-default directory to store git data use
+## a path that doesn't contain symlinks.
+git_data_dir '{{ salt['pillar.get']('gitlab:git_data_dir') }}'
 
 {% for section, properties in salt['pillar.get']('gitlab:config').iteritems() -%}
 

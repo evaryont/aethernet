@@ -2,12 +2,20 @@ gitlab:
   external_url: 'http://library.evaryont.me'
   mattermost_external_url: 'http://corvus.pub'
   pages_external_url: 'http://pages.corvus.club'
+  registry_external_url: 'http://r.library.evaryont.me'
+  git_data_dir: "/var/opt/gitlab/git-data"
 
   config:
     gitlab_rails:
       time_zone: 'UTC'
       lfs_enabled: true
       manage_backup_path: true
+      artifacts_enabled: true
+      ldap_enabled: false
+      kerberos_enabled: false
+      omniauth_enabled: false
+      initial_root_password: "sponsored by money"
+      registry_enabled: true
     registry:
       enable: false
     gitlab_workhorse:
@@ -23,7 +31,6 @@ gitlab:
       audit_usernames: true
     postgresql:
       enable: true
-      listen_address: nil # disable postgresql listening on any network device
     redis:
       enable: true
     nginx:
