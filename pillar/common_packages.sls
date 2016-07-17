@@ -10,3 +10,4 @@ common_packages:
     - wget # Useful CLI downloading tool
     - curl # Useful CLI downloading tool, part 2
     - augeas # Smart file editing
+    - psmisc # I like pstree
