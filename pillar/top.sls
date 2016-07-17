@@ -9,9 +9,7 @@ base:
     - sudo
     - firewalld
     - imma_admin
-
-  '*.dev.*':
-    - overrides.vagrant
+    - letsencrypt
 
   'evaryont.me or master.dev.*':
     - match: compound
@@ -22,3 +20,6 @@ base:
 
   'library.evaryont.me or gitlab.dev.*':
     - gitlab
+
+  '*.dev.*':
+    - overrides.vagrant

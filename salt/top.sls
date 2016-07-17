@@ -18,6 +18,11 @@ base:
   'osfamily:RedHat':
     - epel
 
+  # Only select minions that actually have a LE domain set
+  'not I@letsencrypt:domains:false':
+    - match: compound
+    - certbot
+
   # Here begins the node-specific formulas:
   'master.*':
     - salt.master

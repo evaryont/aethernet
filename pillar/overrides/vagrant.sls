@@ -9,6 +9,9 @@ salt:
   minion:
     master: 10.20.30.11
 
+letsencrypt:
+  domains: false # re-set the default value to disable certbot magic
+
 gitlab:
   external_url: 'http://gitlab.dev.aether.nu'
   mattermost_external_url: 'http://chat.gitlab.dev.aether.nu'
