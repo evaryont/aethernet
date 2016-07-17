@@ -1,8 +1,6 @@
 gitlab:
-  external_url: 'http://library.evaryont.me'
-  mattermost_external_url: 'http://corvus.pub'
-  pages_external_url: 'http://pages.corvus.club'
-  registry_external_url: 'http://r.library.evaryont.me'
+  external_url: 'https://library.evaryont.me'
+  registry_external_url: 'https://r.library.evaryont.me'
   git_data_dir: "/var/opt/gitlab/git-data"
 
   config:
@@ -16,8 +14,9 @@ gitlab:
       omniauth_enabled: false
       initial_root_password: "sponsored by money"
       registry_enabled: true
-    registry:
-      enable: false
+    registry_nginx:
+      ssl_certificate: "/etc/letsencrypt/live/r.library.evaryont.me/fullchain.pem"
+      ssl_certificate_key: "/etc/letsencrypt/live/r.library.evaryont.me/privkey.pem"
     gitlab_workhorse:
       enable: true
     user:
@@ -35,6 +34,10 @@ gitlab:
       enable: true
     nginx:
       enable: true
+      redirect_http_to_https: false # custom config below will handle this
+      custom_nginx_config: "include /etc/nginx.lehttp.conf;"
+      ssl_certificate: "/etc/letsencrypt/live/library.evaryont.me/fullchain.pem"
+      ssl_certificate_key: "/etc/letsencrypt/live/library.evaryont.me/privkey.pem"
     logrotate:
       enable: true
     manage_accounts:
@@ -43,3 +46,8 @@ gitlab:
       enable: true
     mattermost:
       enable: false
+
+letsencrypt:
+  domains:
+    - library.evaryont.me
+    - r.library.evaryont.me

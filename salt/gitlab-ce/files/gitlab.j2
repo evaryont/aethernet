@@ -5,8 +5,8 @@
 ## For more details on configuring external_url see:
 ## http://docs.gitlab.com/omnibus/settings/configuration.html#configuring-the-external-url-for-gitlab
 external_url '{{ salt['pillar.get']('gitlab:external_url') }}'
-mattermost_external_url '{{ salt['pillar.get']('gitlab:mattermost_external_url') }}'
-pages_external_url '{{ salt['pillar.get']('gitlab:pages_external_url') }}'
+#mattermost_external_url '{{ salt['pillar.get']('gitlab:mattermost_external_url') }}'
+#pages_external_url '{{ salt['pillar.get']('gitlab:pages_external_url') }}'
 registry_external_url '{{ salt['pillar.get']('gitlab:registry_external_url') }}'
 
 ## For setting up different data storing directory
@@ -15,12 +15,12 @@ registry_external_url '{{ salt['pillar.get']('gitlab:registry_external_url') }}'
 ## a path that doesn't contain symlinks.
 git_data_dir '{{ salt['pillar.get']('gitlab:git_data_dir') }}'
 
-{% for section, properties in salt['pillar.get']('gitlab:config').iteritems() -%}
+{%- for section, properties in salt['pillar.get']('gitlab:config').iteritems() %}
 
 ##
 ## {{ section }} configuration
 ##
-{% for property, value in properties.iteritems() %}
+{%- for property, value in properties.iteritems() %}
 {{ section }}['{{ property }}'] = {{ value | yaml_encode }}
-{% endfor %}
-{% endfor %}
+{%- endfor %}
+{%- endfor %}
