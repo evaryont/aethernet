@@ -16,6 +16,7 @@ base:
     - firewalld
 
   'os_family:RedHat':
+    - match: grain
     - epel
 
   # Only select minions that actually have a LE domain set
