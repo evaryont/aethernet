@@ -16,7 +16,6 @@ salt:
     pillar_roots:
       base:
         - {{ basedir }}/pillar
-    auto_accept: True
     hash_type: sha256
     state_verbose: False
     state_output: "changes"

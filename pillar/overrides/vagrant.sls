@@ -6,6 +6,8 @@ administrivia:
       - vagrant
 
 salt:
+  master:
+    auto_accept: True
   minion:
     master: 10.20.30.11
 
