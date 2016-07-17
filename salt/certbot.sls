@@ -16,4 +16,4 @@ le-{{ domain }}:
     - webroot: {{ salt['pillar.get']('letsencrypt:webroot') }}
     - renew: 14
     - fire_event: acme/{{ domain }}
-{%- end %}
+{%- endfor %}
