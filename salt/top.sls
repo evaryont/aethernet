@@ -1,4 +1,8 @@
 base:
+  'os_family:RedHat':
+    - match: grain
+    - epel
+
   '*': # The vitamins & minerals every server loves!
     - basics.common_packages
     - basics.timezone
@@ -14,10 +18,6 @@ base:
     - imma_admin
     - sudoers
     - firewalld
-
-  'os_family:RedHat':
-    - match: grain
-    - epel
 
   # Only select minions that actually have a LE domain set
   'not I@letsencrypt:domains:false':
