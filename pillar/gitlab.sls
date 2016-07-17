@@ -12,7 +12,6 @@ gitlab:
       ldap_enabled: false
       kerberos_enabled: false
       omniauth_enabled: false
-      initial_root_password: "sponsored by money"
       registry_enabled: true
     registry_nginx:
       ssl_certificate: "/etc/letsencrypt/live/r.library.evaryont.me/fullchain.pem"

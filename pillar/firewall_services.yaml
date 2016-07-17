@@ -6,3 +6,8 @@ services:
   frog.aether.nu:
     - kodi
     - upnp
+  library.evaryont.me:
+    - http
+    - https
+  gitlab.dev.aether.nu:
+    - http

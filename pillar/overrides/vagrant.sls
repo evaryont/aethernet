@@ -18,6 +18,7 @@ gitlab:
   external_url: 'http://gitlab.dev.aether.nu'
   mattermost_external_url: 'http://chat.gitlab.dev.aether.nu'
   pages_external_url: 'http://pages.gitlab.dev.aether.nu'
+  registry_external_url: 'http://registry.gitlab.dev.aether.nu'
   config:
     nginx:
       custom_nginx_config: "# overriden for dev. no encryption"
