@@ -11,3 +11,13 @@ services:
     - https
   gitlab.dev.aether.nu:
     - http
+  master.dev.aether.nu:
+    - salt-master
+  mail.dev.aether.nu:
+    - smtp
+    - smtps
+    - imap
+    - imaps
+  owncloud.dev.aether.nu:
+    - http
+    - https
