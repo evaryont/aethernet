@@ -13,6 +13,8 @@ salt:
         - {{ basedir }}/formulas/sudoers-formula
         - {{ basedir }}/formulas/firewalld-formula
         - {{ basedir }}/formulas/nginx-formula
+        - {{ basedir }}/formulas/dovecot-formula
+        - {{ basedir }}/formulas/postfix-formula
     pillar_roots:
       base:
         - {{ basedir }}/pillar

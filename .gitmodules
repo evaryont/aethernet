@@ -16,3 +16,9 @@
 [submodule "formulas/nginx-formula"]
 	path = formulas/nginx-formula
 	url = https://github.com/saltstack-formulas/nginx-formula
+[submodule "formulas/postfix-formula"]
+	path = formulas/postfix-formula
+	url = https://github.com/saltstack-formulas/postfix-formula
+[submodule "formulas/dovecot-formula"]
+	path = formulas/dovecot-formula
+	url = https://github.com/saltstack-formulas/dovecot-formula
