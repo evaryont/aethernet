@@ -4,6 +4,7 @@
   ['owncloud', 'arch'],
   ['ipa', 'centos'],
   ['gitlab', 'centos'],
+  ['mail', 'arch'],
 ]
 
 @box_settings = {
