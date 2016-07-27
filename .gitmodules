@@ -25,3 +25,6 @@
 [submodule "formulas/php-formula"]
 	path = formulas/php-formula
 	url = https://github.com/saltstack-formulas/php-formula
+[submodule "formulas/powerdns-formula"]
+	path = formulas/powerdns-formula
+	url = https://github.com/saltstack-formulas/powerdns-formula
