@@ -15,6 +15,7 @@ salt:
         - {{ basedir }}/formulas/nginx-formula
         - {{ basedir }}/formulas/dovecot-formula
         - {{ basedir }}/formulas/postfix-formula
+        - {{ basedir }}/formulas/php-formula
     pillar_roots:
       base:
         - {{ basedir }}/pillar
