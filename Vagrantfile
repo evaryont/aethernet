@@ -32,8 +32,6 @@ Vagrant.configure(2) do |config|
   if Vagrant.has_plugin?('vagrant-cachier')
     config.cache.scope = :box
     config.cache.synced_folder_opts = {type: :nfs, mount_options: ['nolock', 'vers=4', 'tcp']}
-    config.cache.enable :pacman
-    config.cache.enable :yum
   end
 
   config.vm.provider "virtualbox" do |v|
