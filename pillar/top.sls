@@ -20,5 +20,11 @@ base:
   'library.evaryont.me or gitlab.dev.*':
     - gitlab
 
+  'mail.dev.aether.nu or oregano.nogweii.xyz':
+    - mail.dovecot
+    - mail.postfix
+
+  ## Environment overrides ##
+  # THIS MUST BE LAST
   '*.dev.*':
     - overrides.vagrant

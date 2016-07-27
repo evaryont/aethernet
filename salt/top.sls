@@ -38,3 +38,8 @@ base:
 
   'library.evaryont.me':
     - gitlab-ce
+
+  'mail.dev.aether.nu or oregano.nogweii.xyz':
+    - postfix
+    - dovecot
+    - mail

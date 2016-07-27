@@ -27,3 +27,8 @@ gitlab:
     registry_nginx:
       ssl_certificate: ""
       ssl_certificate_key: ""
+
+postfix:
+  config:
+    myhostname: mail.dev.aether.nu
+    mydomain: dev.aether.nu
