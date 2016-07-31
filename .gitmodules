@@ -28,3 +28,6 @@
 [submodule "formulas/powerdns-formula"]
 	path = formulas/powerdns-formula
 	url = https://github.com/saltstack-formulas/powerdns-formula
+[submodule "formulas/docker-formula"]
+	path = formulas/docker-formula
+	url = https://github.com/saltstack-formulas/docker-formula

@@ -7,6 +7,7 @@ salt:
     file_roots:
       base:
         - {{ basedir }}/salt
+        - {{ basedir }}/formulas/docker-formula
         - {{ basedir }}/formulas/powerdns-formula
         - {{ basedir }}/formulas/salt-formula
         - {{ basedir }}/formulas/openssh-formula
