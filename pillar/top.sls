@@ -16,6 +16,7 @@ base:
 
   'frog.aether.nu':
     - overrides.frog
+    - media_acquisition
 
   'library.evaryont.me or gitlab.dev.*':
     - gitlab

@@ -43,3 +43,6 @@ base:
     - postfix
     - dovecot
     - mail
+
+  'frog.aether.nu':
+    - media_acquisition
