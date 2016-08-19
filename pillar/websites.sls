@@ -1,5 +1,9 @@
 {%- set web_dir = "/opt/blog" %}
 
+letsencrypt:
+  domains:
+    - evaryont.me
+
 personal_website_dir: {{ web_dir }}
 nginx:
   ng:
