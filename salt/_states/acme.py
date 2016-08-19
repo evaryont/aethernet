@@ -89,8 +89,10 @@ def cert(name,
         return ret
 
     if not __salt__['acme.has'](name):
+        log.debug('No previous certificate found for ' + name)
         old = None
     else:
+        log.debug('Previous certificate information loaded for ' + name)
         old = __salt__['acme.info'](name)
 
     res = __salt__['acme.cert'](
