@@ -11,8 +11,10 @@ gitlab:
       artifacts_enabled: true
       ldap_enabled: false
       kerberos_enabled: false
-      omniauth_enabled: false
       registry_enabled: true
+      omniauth_enabled: true
+      omniauth_allow_single_sign_on: ["github", "google_oauth2", "twitter"]
+      omniauth_block_auto_created_users: true # Admin must approve new accounts made via SSO
     registry_nginx:
       ssl_certificate: "/etc/letsencrypt/live/r.library.evaryont.me/fullchain.pem"
       ssl_certificate_key: "/etc/letsencrypt/live/r.library.evaryont.me/privkey.pem"

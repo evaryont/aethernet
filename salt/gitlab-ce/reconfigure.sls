@@ -12,3 +12,4 @@ Reconfigure gitlab:
     - cwd: /
     - onchanges:
       - file: /etc/gitlab/gitlab.rb
+      - pkg: gitlab-ce

@@ -21,7 +21,7 @@ gitlab_gitlab-ce_source:
     - sslcacert: /etc/pki/tls/certs/ca-bundle.crt
 
 gitlab-ce:
-  pkg.installed
+  pkg.latest
 
 /etc/nginx.lehttp.conf:
   file.managed:
